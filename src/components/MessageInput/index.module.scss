@@ -2,8 +2,8 @@
 @import '../../styles/mixins';
 
 .inputArea {
-  border-top: 1px solid var(--border-primary);
-  background: var(--bg-secondary);
+  border-top: 1px solid $border-primary;
+  background: $bg-secondary;
   padding: 1rem 1.5rem;
 }
 
@@ -19,14 +19,14 @@
 .voiceBtn {
   padding: 0.75rem;
   display: flex;
-  color: var(--text-secondary);
+  color: $text-secondary;
   border-radius: 8px;
   transition: all 0.2s ease;
   flex-shrink: 0;
 
   &:hover {
-    background: var(--bg-hover);
-    color: var(--text-primary);
+    background: $bg-hover;
+    color: $text-primary;
   }
 }
 
@@ -40,10 +40,10 @@
   min-height: 44px;
   max-height: 120px;
   padding: 0.75rem 1rem;
-  background: var(--bg-primary);
-  border: 1px solid var(--border-primary);
+  background: $bg-primary;
+  border: 1px solid $border-primary;
   border-radius: 12px;
-  color: var(--text-primary);
+  color: $text-primary;
   font-size: 0.875rem;
   line-height: 1.5;
   resize: none;
@@ -52,18 +52,18 @@
   transition: all 0.2s ease;
 
   &::placeholder {
-    color: var(--text-tertiary);
+    color: $text-tertiary;
   }
 
   &:focus {
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.1);
+    border-color: $accent-primary;
+    box-shadow: 0 0 0 3px rgba($accent-primary-rgb), 0.1;
   }
 }
 
 .sendBtn {
   padding: 0.75rem;
-  background: var(--accent-primary);
+  background: $accent-primary;
   color: white;
   border-radius: 8px;
   display: flex;
@@ -71,7 +71,7 @@
   flex-shrink: 0;
 
   &:hover {
-    background: var(--accent-hover);
+    background: $accent-hover;
     transform: translateY(-1px);
   }
 
@@ -87,5 +87,5 @@
 
 .disclaimer {
   font-size: 0.75rem;
-  color: var(--text-tertiary);
+  color: $text-tertiary;
 }

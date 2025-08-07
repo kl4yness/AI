@@ -10,7 +10,7 @@
     flex-direction: row-reverse;
     
     .bubble {
-      background: var(--accent-primary);
+      background: $accent-primary;
       color: white;
     }
     
@@ -21,8 +21,8 @@
 
   &.ai {
     .bubble {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-primary);
+      background: $bg-secondary;
+      border: 1px solid $border-primary;
     }
   }
 }
@@ -36,13 +36,13 @@
   font-size: 0.875rem;
   
   .user & {
-    background: var(--accent-secondary);
+    background: $accent-secondary;
     color: white;
   }
   
   .ai & {
-    background: var(--bg-tertiary);
-    color: var(--text-secondary);
+    background: $bg-tertiary;
+    color: $text-secondary;
   }
 }
 
@@ -72,7 +72,7 @@
 }
 
 .text {
-  font-family: var(--font-inter);
+  font-family: $font-inter;
   font-size: 0.875rem;
   line-height: 1.5;
   white-space: pre-wrap;
@@ -81,7 +81,7 @@
   
   // Code blocks styling
   code {
-    font-family: var(--font-mono);
+    font-family: $font-mono;
     background: rgba(0, 0, 0, 0.1);
     padding: 0.125rem 0.25rem;
     border-radius: 4px;
@@ -91,6 +91,6 @@
 
 .timestamp {
   font-size: 0.75rem;
-  color: var(--text-tertiary);
+  color: $text-tertiary;
   padding: 0 0.5rem;
 }

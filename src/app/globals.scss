@@ -14,9 +14,9 @@ body {
 }
 
 body {
-  font-family: var(--font-inter);
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  font-family: $font-inter;
+  background: $bg-primary;
+  color: $text-primary;
   line-height: 1.6;
 }
 
@@ -47,14 +47,14 @@ input, textarea {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+  background: $bg-secondary;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-primary);
+  background: $border-primary;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-primary);
+  background: $accent-primary;
 }

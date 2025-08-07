@@ -4,8 +4,8 @@
 .header {
   @include flex-between;
   padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--border-primary);
-  background: var(--bg-secondary);
+  border-bottom: 1px solid $border-primary;
+  background: $bg-secondary;
   height: 77px;
 }
 
@@ -18,7 +18,7 @@
 .avatar {
   width: 40px;
   height: 40px;
-  background: var(--accent-primary);
+  background: $accent-primary;
   border-radius: 50%;
   @include flex-center;
   color: white;
@@ -33,22 +33,22 @@
 .title {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: $text-primary;
 }
 
 .status {
   font-size: 0.75rem;
-  color: var(--accent-primary);
+  color: $accent-primary;
 }
 
 .menuBtn {
   padding: 0.5rem;
-  color: var(--text-secondary);
+  color: $text-secondary;
   border-radius: 6px;
   transition: all 0.2s ease;
 
   &:hover {
-    background: var(--bg-hover);
-    color: var(--text-primary);
+    background: $bg-hover;
+    color: $text-primary;
   }
 }
