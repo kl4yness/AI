@@ -2,11 +2,9 @@ import { useChatStore } from "@/store/chatStore";
 import type { Message } from "@/types/Message";
 
 export async function generateTitle(messages: Message[], chatId: string) {
-  const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+  const res = await fetch("/api/chat", {
     method: "POST",
     headers: {
-      Authorization:
-      `Bearer ${process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
