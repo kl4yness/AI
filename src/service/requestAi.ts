@@ -14,7 +14,7 @@ export async function requestAI(messages: Message[], chatId: string) {
       method: "POST",
       headers: {
         Authorization:
-          `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        `Bearer ${process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({

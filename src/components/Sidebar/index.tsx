@@ -13,6 +13,7 @@ const Sidebar = () => {
   const addChat = useChatStore(state => state.addChat)
   const setActiveChatId = useChatStore((state) => state.setActiveChatId);
   const chatList = useMemo(() => Object.values(chats), [chats]);
+  const activeChatId = useChatStore(state => state.activeChatId)
 
   return (
     <aside className={styles.sidebar}>
@@ -38,7 +39,7 @@ const Sidebar = () => {
         {chatList.map((chat: Chat) => (
           <div
             key={chat.id}
-            className={styles.chatItem}
+            className={`${styles.chatItem} ${activeChatId === chat.id ? styles.active : ''}`}
             onClick={() => setActiveChatId(chat.id)}
           >
             <MessageSquare size={16} className={styles.chatIcon} />
