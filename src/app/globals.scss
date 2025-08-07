@@ -1,5 +1,5 @@
-@import '../styles/animations';
-@import '../styles/variables';
+@use '../styles/animations' as *;
+@use '../styles/variables' as *;
 
 * {
   box-sizing: border-box;
@@ -14,7 +14,6 @@ body {
 }
 
 body {
-  font-family: $font-inter;
   background: $bg-primary;
   color: $text-primary;
   line-height: 1.6;

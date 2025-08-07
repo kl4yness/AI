@@ -1,5 +1,5 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .message {
   display: flex;
@@ -72,7 +72,6 @@
 }
 
 .text {
-  font-family: $font-inter;
   font-size: 0.875rem;
   line-height: 1.5;
   white-space: pre-wrap;
@@ -81,7 +80,6 @@
   
   // Code blocks styling
   code {
-    font-family: $font-mono;
     background: rgba(0, 0, 0, 0.1);
     padding: 0.125rem 0.25rem;
     border-radius: 4px;
