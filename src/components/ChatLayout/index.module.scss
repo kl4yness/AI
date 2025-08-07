@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.layout {
+  display: flex;
+  height: 100vh;
+  background: var(--bg-primary);
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
