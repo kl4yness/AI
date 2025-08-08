@@ -16,7 +16,7 @@ export async function requestAI(messages: Message[], chatId: string) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "openrouter/horizon-beta",
+        model: "deepseek/deepseek-chat-v3-0324:free",
         messages: messages.map((m) => ({
           role: m.role,
           content: m.message,

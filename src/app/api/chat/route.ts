@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   const apiKey = process.env.OPENROUTER_API_KEY;
+
   if (!apiKey) {
     return NextResponse.json({ error: 'API ключ не настроен' }, { status: 500 });
   }
@@ -10,11 +11,11 @@ export async function POST(request: NextRequest) {
   try {
     body = await request.json();
   } catch {
-    return NextResponse.json({ error: 'Неверный формат запроса' }, { status: 400 });
+    return NextResponse.json({ error: 'Неверный формат запроса: ожидается JSON' }, { status: 400 });
   }
 
-  if (!body.messages) {
-    return NextResponse.json({ error: 'Неверный формат запроса' }, { status: 400 });
+  if (!body.messages || !Array.isArray(body.messages)) {
+    return NextResponse.json({ error: 'Неверный формат: поле "messages" обязательно и должно быть массивом' }, { status: 400 });
   }
 
   try {
@@ -35,7 +36,17 @@ export async function POST(request: NextRequest) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      return NextResponse.json({ error: errorText }, { status: response.status });
+
+      let parsedError;
+      try {
+        parsedError = JSON.parse(errorText);
+      } catch {
+        parsedError = { message: errorText };
+      }
+
+      console.error('Ошибка от OpenRouter:', parsedError);
+
+      return NextResponse.json({ error: parsedError }, { status: response.status });
     }
 
     const data = await response.json();
@@ -44,6 +55,9 @@ export async function POST(request: NextRequest) {
     if (error.name === 'AbortError') {
       return NextResponse.json({ error: 'Превышено время ожидания запроса' }, { status: 504 });
     }
-    return NextResponse.json({ error: 'Ошибка сервера' }, { status: 500 });
+
+    console.error('Ошибка сервера:', error);
+
+    return NextResponse.json({ error: 'Ошибка сервера при обращении к нейросети' }, { status: 500 });
   }
 }

@@ -59,9 +59,6 @@ const MessageInput = () => {
   return (
     <div className={styles.inputArea}>
       <div className={styles.inputContainer}>
-        <button className={styles.attachBtn} title="Временно недоступно">
-          <Paperclip size={20} />
-        </button>
 
         <div className={styles.inputWrapper}>
           <TextareaAutosize
@@ -74,10 +71,6 @@ const MessageInput = () => {
             className={styles.input}
           />
         </div>
-
-        <button className={styles.voiceBtn} title="Временно недоступно">
-          <Mic size={20} />
-        </button>
 
         <button
           className={styles.sendBtn}
