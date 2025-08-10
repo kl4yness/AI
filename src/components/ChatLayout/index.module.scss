@@ -3,7 +3,7 @@
 
 .layout {
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   background: $bg-primary;
 
   @include mobile {
