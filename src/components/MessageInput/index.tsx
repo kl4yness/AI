@@ -81,11 +81,7 @@ const MessageInput = () => {
         </button>
       </div>
 
-      <div className={styles.footer}>
-        <p className={styles.disclaimer}>
-          AI может делать ошибки. Проверяйте важную информацию.
-        </p>
-      </div>
+     
     </div>
   );
 };
